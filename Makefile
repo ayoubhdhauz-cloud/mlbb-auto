@@ -1,6 +1,5 @@
-#export THEOS=/var/mobile/theos
+
 ARCHS = arm64
-#Add arm64e if it needed
 DEBUG = 0
 FINALPACKAGE = 1
 FOR_RELEASE = 1
