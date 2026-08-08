@@ -30,4 +30,6 @@ $(TWEAK_NAME)_FILES = ImGuiDrawView.mm \
     $(wildcard IMGUI/*.mm) \
     Il2cpp.mm
 
+$(TWEAK_NAME)_LDFLAGS = -L$(THEOS_PROJECT_DIR)/5Toubun -ldobby
+
 include $(THEOS_MAKE_PATH)/tweak.mk
