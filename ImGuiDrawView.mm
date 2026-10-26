@@ -87,32 +87,29 @@
     self.mtkView.clearColor = MTLClearColorMake(0, 0, 0, 0);
     self.mtkView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     self.mtkView.clipsToBounds = YES;
+    // ── Init Il2Cpp functions + method offsets ONCE ──────────────────────
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-Attach();
-offset[0] = get_offset(KH_STR("UnityEngine.CoreModule.dll"), KH_STR("UnityEngine"), KH_STR("Camera"), KH_STR("get_main"), 0);
-offset[1] = get_offset(KH_STR("UnityEngine.CoreModule.dll"), KH_STR("UnityEngine"), KH_STR("Camera"), KH_STR("WorldToViewportPoint"), 2);
-offset[2] = get_offset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleBridge"), KH_STR("get_bStartBattle"), 0);
-offset[3] = get_offset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("LogicBattleManager"), KH_STR("GetPlayerLogic"), 1);
-offset[4] = get_offset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("CoolDownData"), KH_STR("GetCoolTime"), 0);
-offsetField[0] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleManager"), KH_STR("m_LocalPlayerShow"));
-offsetField[1] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowEntity"), KH_STR("m_vCachePosition"));
-offsetField[2] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleManager"), KH_STR("m_dicPlayerShow"));
-offsetField[3] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowEntity"), KH_STR("m_bSameCampType"));
-offsetField[4] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowEntity"), KH_STR("m_bDeath"));
-offsetField[5] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("LogicFighter"), KH_STR("m_SkillComp"));
-offsetField[6] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("LogicSkillComp"), KH_STR("m_CoolDownComp"));
-offsetField[7] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowEntity"), KH_STR("m_OwnSkillComp"));
-offsetField[8] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("ShowOwnSkillComp"), KH_STR("skillUseTypeList"));
-offsetField[9] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("ShowOwnSkillComp"), KH_STR("m_SkillList"));
-offsetField[10] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowSkillData"), KH_STR("m_TranID"));
-offsetField[11] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("CoolDownComp"), KH_STR("m_DicCoolInfo"));
-offsetField[12] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowPlayer"), KH_STR("m_iSummonStartSkillId"));
-Il2CppGetStaticFieldValue(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleData"), KH_STR("m_BattleBridge"), &BattleBridge_Instance);
-Il2CppGetStaticFieldValue(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleManager"), KH_STR("Instance"), &BattleManager_Instance);
-Il2CppGetStaticFieldValue(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("LogicBattleManager"), KH_STR("Instance"), &InstanceBattle);
+        Attach();
+        offset[0] = get_offset(KH_STR("UnityEngine.CoreModule.dll"), KH_STR("UnityEngine"), KH_STR("Camera"), KH_STR("get_main"), 0);
+        offset[1] = get_offset(KH_STR("UnityEngine.CoreModule.dll"), KH_STR("UnityEngine"), KH_STR("Camera"), KH_STR("WorldToViewportPoint"), 2);
+        offset[2] = get_offset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleBridge"), KH_STR("get_bStartBattle"), 0);
+        offset[3] = get_offset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("LogicBattleManager"), KH_STR("GetPlayerLogic"), 1);
+        offset[4] = get_offset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("CoolDownData"), KH_STR("GetCoolTime"), 0);
+        offsetField[5]  = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("LogicFighter"), KH_STR("m_SkillComp"));
+        offsetField[6]  = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("LogicSkillComp"), KH_STR("m_CoolDownComp"));
+        offsetField[7]  = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowEntity"), KH_STR("m_OwnSkillComp"));
+        offsetField[8]  = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("ShowOwnSkillComp"), KH_STR("skillUseTypeList"));
+        offsetField[9]  = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("ShowOwnSkillComp"), KH_STR("m_SkillList"));
+        offsetField[10] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowSkillData"), KH_STR("m_TranID"));
+        offsetField[11] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR("Battle"), KH_STR("CoolDownComp"), KH_STR("m_DicCoolInfo"));
+        offsetField[12] = Il2CppGetFieldOffset(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("ShowPlayer"), KH_STR("m_iSummonStartSkillId"));
+    });
 
-});
+    // ── Refresh singleton instances EVERY frame (changes each match) ──────
+    Il2CppGetStaticFieldValue(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleData"), KH_STR("m_BattleBridge"), &BattleBridge_Instance);
+    Il2CppGetStaticFieldValue(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("BattleManager"), KH_STR("Instance"), &BattleManager_Instance);
+    Il2CppGetStaticFieldValue(KH_STR("Assembly-CSharp.dll"), KH_STR(""), KH_STR("LogicBattleManager"), KH_STR("Instance"), &InstanceBattle);
 }
 
 
